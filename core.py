@@ -15,7 +15,7 @@ from selenium import webdriver
 # ===== 平台路由 =====
 
 def detect_platform(url_or_text: str) -> str:
-    """识别链接属于哪个平台: douyin | bilibili | xiaohongshu | unknown"""
+    """识别链接属于哪个平台: douyin | bilibili | unknown"""
     t = url_or_text.lower()
     if 'douyin.com' in t or 'iesdouyin.com' in t:
         return 'douyin'
@@ -51,21 +51,6 @@ def fetch_media_info(url_or_text: str) -> dict:
         return {'success': False, 'type': None, 'video_url': None,
                 'images': [], 'title': '', 'author': '',
                 'error': '无法识别链接，目前支持: 抖音 / B站'}
-
-
-def download_media(url_or_text: str, save_dir: str, quality_key: str = '') -> dict:
-    """
-    统一下载入口（仅供内部调用，app.py 会直接调用各平台的下载函数）
-    """
-    platform = detect_platform(url_or_text)
-    if platform == 'bilibili':
-        from bilibili import download_bilibili
-        qn = 0
-        if quality_key and quality_key.startswith('qn_'):
-            qn = int(quality_key[3:])
-        return download_bilibili(url_or_text, save_dir, quality=qn)
-    return {'success': False, 'files': [], 'error': 'use app.py for douyin'}
-
 
 # ===== 抖音逻辑 =====
 

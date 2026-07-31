@@ -10,6 +10,8 @@ MediaSaver_downloads/
 dist/
 *.zip
 *.exe
+mediasaver.log
+build/
 
 # IDE
 .vscode/

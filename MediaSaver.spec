@@ -5,7 +5,7 @@ a = Analysis(
     ['app.py'],
     pathex=[],
     binaries=[],
-    datas=[('assets', 'assets')],
+    datas=[('assets', 'assets'), ('templates', 'templates')],
     hiddenimports=['selenium.webdriver.chrome.options', 'selenium.webdriver.chrome.webdriver', 'selenium.webdriver.edge.options', 'selenium.webdriver.edge.webdriver', 'selenium.webdriver.edge.service', 'selenium.webdriver.common.service', 'PIL', 'PIL._imaging'],
     hookspath=[],
     hooksconfig={},
