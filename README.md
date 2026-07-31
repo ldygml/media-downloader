@@ -88,3 +88,7 @@
 ---
 
 *MediaSaver v1.1 · Python + Flask + Selenium · Cloudflare Tunnel*
+
+## 作者
+
+- **刘彦君** ([@ldygml](https://github.com/ldygml)) — 设计与开发
