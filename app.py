@@ -491,9 +491,15 @@ def download():
 @app.route('/file/')
 def serve_file():
     filename = request.args.get('name', '')
-    if not filename or '..' in filename or '/' in filename or '\\' in filename:
+    if not filename:
+        return 'invalid', 400
+    # 只允许纯文件名（不含路径分隔符），防路径穿越
+    if '/' in filename or '\\' in filename or os.path.basename(filename) != filename:
         return 'invalid', 400
     path = os.path.join(DOWNLOAD_DIR, filename)
+    # 最终校验：真实路径必须在下载目录内
+    if not os.path.realpath(path).startswith(os.path.realpath(DOWNLOAD_DIR)):
+        return 'invalid', 400
     if not os.path.exists(path):
         return 'not found', 404
     return send_file(path, as_attachment=True)
