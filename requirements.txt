@@ -1,0 +1,4 @@
+flask>=3.0
+selenium>=4.15
+requests>=2.31
+gunicorn>=21.2

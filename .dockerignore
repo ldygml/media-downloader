@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.env
+.git/
+MediaSaver_downloads/
+dist/
+*.zip
+*.exe
+.vscode/
+.idea/
