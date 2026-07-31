@@ -91,4 +91,4 @@
 
 ## 作者
 
-- **刘彦君** ([@ldygml](https://github.com/ldygml)) — 设计与开发
+- **999感冒灵** ([@ldygml](https://github.com/ldygml)) — 设计与开发
